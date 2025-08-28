@@ -1,0 +1,19 @@
+﻿@using Mvp.Selections.Domain
+@model MvpSite.Rendering.Models.Admin.LicenseEditModel
+
+<div class="mvp-fs-adminlicenseedit col-12 bg-white">
+    <form method="post">
+        <input asp-for="Id" type="hidden" />
+        <input asp-for="IsEdit" type="hidden" value="true" />
+        <div class="form-group">
+            <label asp-for="Email">
+                @(Model.IsEditing? Html.Raw(Model.EmailLabel?.EditableMarkup) : Model.EmailLabel?.Value)
+            </label>
+            <span class="text-danger">*</span>
+            <input asp-for="Email" class="form-control" required/>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <button asp-for="SubmitLabel" type="submit" class="btn btn-primary">@(Model.IsEditing? Html.Raw(Model.SubmitLabel?.EditableMarkup) : Model.SubmitLabel?.Value)</button>
+    </form>
+</div> 
