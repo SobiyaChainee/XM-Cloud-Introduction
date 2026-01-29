@@ -1,0 +1,17 @@
+﻿@model MvpSite.Rendering.Models.Admin.LicenseUploadModel
+
+<div class="mvp-fs-adminlicenseupload col-12 bg-white">
+    <h2 asp-for="TitleLabel"></h2>
+    <form method="post" enctype="multipart/form-data" )">
+        <div class="form-group">
+            <label asp-for="DescriptionLabel" for="licenseFile"></label>
+            <input asp-for="ChooseFileLabel" type="file" class="form-control-file" id="licenseFile" name="LicenseFile" accept=".zip" />
+            <span asp-validation-for="LicenseFile" class="text-danger"></span>
+        </div>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <button asp-for="SubmitLabel" type="submit" class="btn btn-primary"></button>
+    </form>
+</div>
+

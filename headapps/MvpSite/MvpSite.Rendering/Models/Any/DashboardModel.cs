@@ -29,6 +29,8 @@ public class DashboardModel : BaseModel
 
     public HyperLinkField? MyCurrentApplicationLink { get; set; }
 
+    public HyperLinkField? AdminLicensesOverviewLink { get; set; }
+
     public HyperLinkField? MvpEmailContactLink { get; set; }
 
     public TextField? MySectionLabel { get; set; }

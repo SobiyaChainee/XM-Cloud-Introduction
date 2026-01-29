@@ -1,0 +1,33 @@
+﻿@using MvpSite.Rendering.Extensions
+@model MvpSite.Rendering.Models.Any.MyLicenseDownload
+
+<div class="mvp-fs-anymylicensedownload col-sm-12 col-md-6 bg-white">
+    <form method="post">
+        <h2 asp-for="TitleLabel"></h2>
+
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="alert alert-danger" role="alert">
+                @Model.ErrorMessage
+            </div>
+        }
+
+        <button asp-for="DownloadLabel" type="submit" name="DownloadLicense" class="btn btn-primary">
+        </button>
+
+        @if (!string.IsNullOrEmpty(Model.Base64Content))
+        {
+            <a id="hiddenDownloadLink"
+               href="data:application/xml;base64,@Model.Base64Content"
+               download="@Model.FileName"
+               style="display:none;"></a>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    document.getElementById("hiddenDownloadLink").click();
+                });
+            </script>
+
+        }
+    </form>
+</div>

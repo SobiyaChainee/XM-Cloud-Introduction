@@ -1,0 +1,17 @@
+@import "../_overview";
+@import "../_form.scss";
+
+.mvp-fs-adminlicensesoverview {
+    @include overviewtable;
+    @include form
+}
+
+.mvp-fs-adminlicenseedit {
+    padding: 2em;
+
+    @include form;
+}
+
+.mvp-fs-adminlicenseupload {
+    @include form;
+}
